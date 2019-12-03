@@ -11,11 +11,11 @@ class Hero extends React.Component {
         <div>
 
             <Carousel className="Carousel">
-                        <div className="slide1"></div>
+                        <div className="slide1" alt=""></div>
                         
-                        <div className="slide2"></div>
+                        <div className="slide2" alt=""></div>
                         
-                        <div className="slide3">
+                        <div className="slide3" alt="">
                             <img className='images'/>
                         </div>
                         
