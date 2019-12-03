@@ -5,23 +5,25 @@ const logger = require('morgan')
 const path = require("path");
 const ObjectId = require('mongodb').ObjectId;
 const usersRoutes = require('./routes/index')
+var compression = require('compression')
 let uri = ""
 const app = express();
 
 
 
 // note with heroku deployment you must source port from env
-const MONGODB_URI = process.env.ATLAS_URI 
+
+
 // || 'mongodb://localhost/auth'
-const port = process.env.PORT || 4001
-;
+const port = process.env.PORT || 4001;
+const MONGODB_URI = process.env.ATLAS_URI 
 
 // register middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(`${__dirname}/client/build`))
 app.use(logger('dev'))
-
+// app.use(compression)
 
 // Serve up static assets (heroku)
 if (process.env.NODE_ENV === "production") {
@@ -37,8 +39,9 @@ mongoose.set('useCreateIndex', true)
 mongoose.connect(MONGODB_URI, {
   useNewUrlParser: true,
   useCreateIndex: true,
-  useUnifiedTopology: true
-}
+  useUnifiedTopology: true,
+  
+}, console.log(uri)
 );
 const connection = mongoose.connection;
 connection.once('open', () => {
