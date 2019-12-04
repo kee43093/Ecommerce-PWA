@@ -5,7 +5,7 @@ const logger = require('morgan')
 const path = require("path");
 const ObjectId = require('mongodb').ObjectId;
 const usersRoutes = require('./routes/index')
-var compression = require('compression')
+// var compression = require('compression')
 let uri = ""
 const app = express();
 
@@ -16,7 +16,7 @@ const app = express();
 
 // || 'mongodb://localhost/auth'
 const port = process.env.PORT || 4001;
-const MONGODB_URI = process.env.ATLAS_URI 
+uri = process.env.ATLAS_URI 
 
 // register middleware
 app.use(express.urlencoded({ extended: true }));
@@ -36,12 +36,12 @@ if (process.env.NODE_ENV === "production") {
 
 // connection to database
 mongoose.set('useCreateIndex', true)
-mongoose.connect(MONGODB_URI, {
+mongoose.connect(uri, {
   useNewUrlParser: true,
   useCreateIndex: true,
   useUnifiedTopology: true,
   
-}, console.log(uri)
+}, 
 );
 const connection = mongoose.connection;
 connection.once('open', () => {
