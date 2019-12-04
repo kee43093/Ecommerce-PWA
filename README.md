@@ -79,6 +79,5 @@ module.exports = mySpecialRouter
 
 ### Screenshot
 
-
-![](client/public/images/200x120_CODGhost.jpg)
+![](client/public/images/images/IOS(1).jpg)
 
