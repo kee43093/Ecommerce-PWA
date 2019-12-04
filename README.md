@@ -61,7 +61,7 @@ mySpecialRouter.post("/comments", (req, res) => {
 })
 
 module.exports = mySpecialRouter
-![](client/public/images/2k20 forreal.jpeg)
+
 ```
 
 
@@ -77,5 +77,5 @@ module.exports = mySpecialRouter
 
 - While the Mongoose user schema enforces email uniqueness, there's no handler for duplicate user emails on the client side. (A user wouldn't know why they couldn't create their account if they came across this scenario).
 
-
+![](client/public/images/2k20 forreal.jpeg)
 
